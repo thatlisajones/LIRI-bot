@@ -91,7 +91,7 @@ function movieThis() {
     if (!searchItem) {
         searchItem = "Mr. Nobody"
     }
-    request("http://www.omdbapi.com/?apikey=34d66101&t=" + searchItem, function (error, response, body) {
+    request("http://www.omdbapi.com/?apikey=f62ac4e4&t=" + searchItem, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             dataLine1 = "Title: " + JSON.parse(body).Title;
             dataLine2 = "Release Year: " + JSON.parse(body).Year;
