@@ -1,134 +1,126 @@
+// Read and set environment variables
 require("dotenv").config();
 
-var keys = require("./keys");
+var keys = require("./keys.js");
 var request = require("request");
 var fs = require("fs");
-var Spotify = require("node-spotify-api");
-var moment = require("moment");
-
+var moment = require('moment');
+var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
+var command = process.argv[2];
+var searchItem = "";
+var dataLine1;
+var dataLine2;
+var dataLine3;
+var dataLine4;
+var dataLine5;
+var dataLine6;
+var dataLine7;
+var dataLine8;
 
-var Concert = function (artist) {
-    const URL = `https://rest.bandsintown.com/artists/${encodeSpecialChars(artist)}/events?app_id=codingbootcamp`;
-        
-    request(URL, function(err, res, body) {
-        if (err) throw err;
+var commandLine = "";
+for (i = 0; i < process.argv.length; i++) {
+    commandLine += (process.argv[i] + " ");
+};
 
-        var events = JSON.parse(body);
-        
-        if (events.length) {
-            for (var i = 0; i < events.length; i++) {
-                var data = events[i];
+for (i = 3; i < process.argv.length; i++) {
+    searchItem += (process.argv[i] + " ");
+}
 
-                var output = [
-                    "----------------------------------------------",
-                    "Venue: " + data.venue.name,
-                    "Location: " + data.venue.city + ", " + data.venue.region,
-                    "Date: " + moment(data.datetime).format("MM/DD/YYYY")
-                ].join("\n");
+searchItem = searchItem.trim();
 
-                console.log(output);
-                fs.appendFile("log.txt", output + "\n", (err) => { if (err) throw err; });
-            }            
-        } else {
-            console.log(`No concerts found for ${artist}`);
-            fs.appendFile("log.txt", `No concerts found for ${artist}\n`, (err) => { if (err) throw err; });
+switch (command) {
+    case "concert-this":
+        concertThis();
+        break;
+    case "spotify-this-song":
+        spotifyThis();
+        break;
+    case "movie-this":
+        movieThis();
+        break;
+    case "do-what-it-says":
+        doWhat();
+        break;
+    default:
+        break;
+};
+
+function concertThis() {
+    request("https://rest.bandsintown.com/artists/" + searchItem + "/events?app_id=ee388fbe45944a2e54ad668916eaac75", function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+            dataLine1 = "This band is playing at " + JSON.parse(body)[0].venue.name + ", " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.region + ", " + JSON.parse(body)[0].venue.country;
+            dataLine2 = moment(JSON.parse(body)[0].datetime).format('MM/DD/YYYY');
+            console.log(dataLine1);
+            console.log(dataLine2);
+            logFile();
         }
     });
 };
 
-var Song = function (song) {
-    spotify.search({ type: "track", query: (song ? song : "The Sign") }, function(err, body) {
-        if (err) throw err;
-
-        var data = body.tracks.items[0];
-
-        if (data) {
-            var output = [
-                "Artist(s): " + data.artists[0].name,
-                "Song name: " + data.name,
-                "Preview: " + data.preview_url,
-                "Album: " + data.album.name
-            ].join("\n");
-
-            console.log(output);
-            fs.appendFile("log.txt", output + "\n", (err) => { if (err) throw err; });
-        } else {
-            console.log(`Could not find a match for "${song}" on Spotify`);
-            fs.appendFile("log.txt", `Could not find a match for "${song}" on Spotify\n`, (err) => { if (err) throw err; });
+function spotifyThis() {
+    if (!searchItem) {
+        searchItem = "the sign ace of base"
+    }
+    spotify.search({ type: "track", query: searchItem }, function (err, response) {
+        if (err) {
+            return console.log('Error occurred: ' + err);
         }
+        dataLine1 = "\nArtist: " + JSON.stringify(response.tracks.items[0].album.artists[0].name);
+        dataLine2 = "\nSong: " + JSON.stringify(response.tracks.items[0].name);
+        dataLine3 = "\nSpotify sample: " + JSON.stringify(response.tracks.items[0].album.artists[0].external_urls.spotify);
+        dataLine4 = "\nAlbum: " + JSON.stringify(response.tracks.items[0].album.name);
+        console.log(dataLine1);
+        console.log(dataLine2);
+        console.log(dataLine3);
+        console.log(dataLine4);
+        logFile();
+    });
+};
+
+function movieThis() {
+    if (!searchItem) {
+        searchItem = "mr nobody"
+    }
+    request("http://www.omdbapi.com/?apikey=34d66101&t=" + searchItem, function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+            dataLine1 = "Title: " + JSON.parse(body).Title;
+            dataLine2 = "Release Year: " + JSON.parse(body).Year;
+            dataLine3 = "IMDb Rating: " + JSON.parse(body).imdbRating;
+            dataLine4 = "Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value;
+            dataLine5 = "Country: " + JSON.parse(body).Country;
+            dataLine6 = "Language: " + JSON.parse(body).Language;
+            dataLine7 = "Plot: " + JSON.parse(body).Plot;
+            dataLine8 = "Actors: " + JSON.parse(body).Actors;
+            console.log(dataLine1);
+            console.log(dataLine2);
+            console.log(dataLine3);
+            console.log(dataLine4);
+            console.log(dataLine5);
+            console.log(dataLine6);
+            console.log(dataLine7);
+            console.log(dataLine8);
+            logFile();
+        }
+    });
+};
+
+function doWhat() {
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        var dataArr = data.split(",");
+        command = dataArr[0];
+        searchItem = dataArr[1];
+        spotifyThis();
     })
 };
 
-var Movie = function (movie) {
-    var URL = `http://www.omdbapi.com/?apikey=${keys.omdb.apikey}&t=${movie ? movie : "Mr. Nobody"}`;
-
-    request(URL, function(err, res, body) {
-        if (err) throw err;
-
-        var data = JSON.parse(body);
-
-        if (data && !data.Error) {
-            var output = [
-                "Title: " + data.Title,
-                "Year: " + data.Year,
-                "Ratings:",
-                "- IMDB: " + (data.Ratings.length && data.Ratings[0]) ? data.Ratings[0].Value : "N/A",
-                "- Rotten Tomatoes: " + (data.Ratings.length && data.Ratings[1]) ? data.Ratings[1].Value : "N/A",
-                "Country: " + data.Country,
-                "Language: " + data.Language,
-                "Plot: " + data.Plot,
-                "Actors: " + data.Actors
-            ].join("\n");
-
-            console.log(output);
-            fs.appendFile("log.txt", output + "\n", (err) => { if (err) throw err; });
-        } else {
-            console.log(`Error: ${data.Error}`);
-            fs.appendFile("log.txt", `Error: ${data.Error}\n`, (err) => { if (err) throw err; });
+function logFile() {
+    fs.appendFile("log.txt", "\r\n" + commandLine + "\r\n" + dataLine1 + "\r\n" + dataLine2 + "\r\n" + dataLine3 + "\r\n" + dataLine4 + "\r\n" + dataLine5 + "\r\n" + dataLine6 + "\r\n" + dataLine7 + "\r\n" + dataLine8, function (error) {
+        if (error) {
+            return console.log(error);
         }
     });
-}
-
-var DoWhatItSays = function () {
-    fs.readFile("random.txt", "utf8", function (err, data) {
-        if (err) throw err;
-
-        var cmd = data.split(",")[0];
-        var term = data.split(",")[1];
-
-        executeCommand(cmd, term);
-    });
 };
-
-var executeCommand = function (cmd, term) {
-    switch (cmd) {
-        case "concert-this":
-            Concert(term);
-            break;
-        case "spotify-this-song":
-            Song(term);
-            break;
-        case "movie-this":
-            Movie(term);
-            break;
-        case "do-what-it-says":
-            DoWhatItSays();
-            break;
-    }
-}
-
-var encodeSpecialChars = function (string) {
-    return string
-            .replace('/', "%252F")
-            .replace('?', "%253F")
-            .replace('*', "%252A")
-            .replace('"', "%27C");
-};
-
-const cmd = process.argv[2];
-const term = process.argv.slice(3).join(" ");
-
-fs.appendFile("log.txt", process.argv.join(" "), (err) => { if (err) throw err; });
-
-executeCommand(cmd, term);
