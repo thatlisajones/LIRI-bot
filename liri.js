@@ -47,17 +47,20 @@ switch (command) {
 };
 
 function concertThis() {
+    if (!searchItem) {
+        searchItem = "Rolling Stones"
+    } 
     request("https://rest.bandsintown.com/artists/" + searchItem + "/events?app_id=ee388fbe45944a2e54ad668916eaac75", function (error, response, body) {
-        // if (!searchItem) {
-        //     searchItem = "Rolling Stones"
-        // } 
+       
         // if (error) {
         //     return console.log('Maybe there are no shows scheduled, or there is an error such as: ' + error);
         // }   
-        if (!error && response.statusCode === 204) {
+        // console.log(JSON.parse(body)[0]);
+        
+        if (JSON.parse(body)[0] === undefined) {
             console.log("No upcoming shows found.")
         }
-        if (!error && response.statusCode === 200) {
+        else {
             dataLine1 = searchItem + " playing at " + JSON.parse(body)[0].venue.name + ", " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.region + ", " + JSON.parse(body)[0].venue.country;
             dataLine2 = moment(JSON.parse(body)[0].datetime).format('MM/DD/YYYY');
             console.log(dataLine1);
