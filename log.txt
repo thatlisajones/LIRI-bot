@@ -44,3 +44,38 @@ undefined
 undefined
 undefined
 undefined
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js do-what-it-says 
+
+Artist: "Backstreet Boys"
+
+Song: "I Want It That Way"
+
+Spotify sample: "https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7"
+
+Album: "The Hits--Chapter One"
+undefined
+undefined
+undefined
+undefined
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js movie-this 
+Title: Mr. Nobody
+Release Year: 2009
+IMDb Rating: 7.9
+Rotten Tomatoes Rating: 67%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js spotify-this-song jennifer she said 
+
+Artist: "Lloyd Cole and the Commotions"
+
+Song: "Jennifer She Said"
+
+Spotify sample: "https://open.spotify.com/artist/6juuiuCv8jRHZOcvP2BqKp"
+
+Album: "Mainstream"
+undefined
+undefined
+undefined
+undefined
