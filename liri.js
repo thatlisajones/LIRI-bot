@@ -50,7 +50,13 @@ function concertThis() {
     request("https://rest.bandsintown.com/artists/" + searchItem + "/events?app_id=ee388fbe45944a2e54ad668916eaac75", function (error, response, body) {
         // if (!searchItem) {
         //     searchItem = "Rolling Stones"
-        // }    
+        // } 
+        // if (error) {
+        //     return console.log('Maybe there are no shows scheduled, or there is an error such as: ' + error);
+        // }   
+        if (!error && response.statusCode === 204) {
+            console.log("No upcoming shows found.")
+        }
         if (!error && response.statusCode === 200) {
             dataLine1 = searchItem + " playing at " + JSON.parse(body)[0].venue.name + ", " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.region + ", " + JSON.parse(body)[0].venue.country;
             dataLine2 = moment(JSON.parse(body)[0].datetime).format('MM/DD/YYYY');
@@ -63,7 +69,7 @@ function concertThis() {
 
 function spotifyThis() {
     if (!searchItem) {
-        searchItem = "the sign ace of base"
+        searchItem = "The Sign by Ace of Base"
     }
     spotify.search({ type: "track", query: searchItem }, function (err, response) {
         if (err) {
@@ -83,7 +89,7 @@ function spotifyThis() {
 
 function movieThis() {
     if (!searchItem) {
-        searchItem = "mr nobody"
+        searchItem = "Mr. Nobody"
     }
     request("http://www.omdbapi.com/?apikey=34d66101&t=" + searchItem, function (error, response, body) {
         if (!error && response.statusCode === 200) {
