@@ -48,8 +48,11 @@ switch (command) {
 
 function concertThis() {
     request("https://rest.bandsintown.com/artists/" + searchItem + "/events?app_id=ee388fbe45944a2e54ad668916eaac75", function (error, response, body) {
+        // if (!searchItem) {
+        //     searchItem = "Rolling Stones"
+        // }    
         if (!error && response.statusCode === 200) {
-            dataLine1 = "This band is playing at " + JSON.parse(body)[0].venue.name + ", " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.region + ", " + JSON.parse(body)[0].venue.country;
+            dataLine1 = searchItem + " playing at " + JSON.parse(body)[0].venue.name + ", " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.region + ", " + JSON.parse(body)[0].venue.country;
             dataLine2 = moment(JSON.parse(body)[0].datetime).format('MM/DD/YYYY');
             console.log(dataLine1);
             console.log(dataLine2);
