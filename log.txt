@@ -1,0 +1,102 @@
+
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js concert-this 
+Rolling Stones playing at Hard Rock Stadium, Miami Gardens, FL, United States
+04/20/2019
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js concert-this Hem 
+Hem playing at Folkan Teater, Ornskoldsvik, , Sweden
+03/12/2019
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js spotify-this-song 
+
+Artist: "Karaoke Box"
+
+Song: "I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of Base]"
+
+Spotify sample: "https://open.spotify.com/artist/0ngegjiIfjQ5XZ14hny28a"
+
+Album: "Karaoke Box: Reggae Greatest Hits"
+undefined
+undefined
+undefined
+undefined
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js spotify-this-song The Sign ace of base 
+
+Artist: "Ace of Base"
+
+Song: "The Sign"
+
+Spotify sample: "https://open.spotify.com/artist/5ksRONqssB7BR161NTtJAm"
+
+Album: "The Sign (US Album) [Remastered]"
+undefined
+undefined
+undefined
+undefined
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js movie-this 
+Title: Mr. Nobody
+Release Year: 2009
+IMDb Rating: 7.9
+Rotten Tomatoes Rating: 67%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js movie-this Wizard of Oz 
+Title: The Wizard of Oz
+Release Year: 1939
+IMDb Rating: 8.0
+Rotten Tomatoes Rating: 98%
+Country: USA
+Language: English
+Plot: Dorothy Gale is swept away from a farm in Kansas to a magical land of Oz in a tornado and embarks on a quest with her new friends to see the Wizard who can help her return home to Kansas and help her friends as well.
+Actors: Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js do-what-it-says 
+
+Artist: "Backstreet Boys"
+
+Song: "I Want It That Way"
+
+Spotify sample: "https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7"
+
+Album: "The Hits--Chapter One"
+undefined
+undefined
+undefined
+undefined
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js do-what-it-says no dont 
+
+Artist: "Backstreet Boys"
+
+Song: "I Want It That Way"
+
+Spotify sample: "https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7"
+
+Album: "The Hits--Chapter One"
+undefined
+undefined
+undefined
+undefined
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js spotify-this-song blue danube strauss 
+
+Artist: "Johann Strauss II"
+
+Song: "An der schönen blauen Donau, Op.314"
+
+Spotify sample: "https://open.spotify.com/artist/5goS0v24Fc1ydjCKQRwtjM"
+
+Album: "Strauss, J.: An der schönen blauen Donau (The Blue Danube)"
+undefined
+undefined
+undefined
+undefined
