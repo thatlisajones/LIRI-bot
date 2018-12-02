@@ -187,3 +187,12 @@ Country: USA
 Language: English
 Plot: An Iowa corn farmer, hearing voices, interprets them as a command to build a baseball diamond in his fields; he does, and the 1919 Chicago White Sox come.
 Actors: Kevin Costner, Amy Madigan, Gaby Hoffmann, Ray Liotta
+C:\Program Files\nodejs\node.exe C:\Users\Lisa Jones\Desktop\code\LIRI-bot\liri.js do-what-it-says 
+Title: Field of Dreams
+Release Year: 1989
+IMDb Rating: 7.5
+Rotten Tomatoes Rating: 86%
+Country: USA
+Language: English
+Plot: An Iowa corn farmer, hearing voices, interprets them as a command to build a baseball diamond in his fields; he does, and the 1919 Chicago White Sox come.
+Actors: Kevin Costner, Amy Madigan, Gaby Hoffmann, Ray Liotta
