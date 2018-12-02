@@ -125,7 +125,18 @@ function doWhat() {
         var dataArr = data.split(",");
         command = dataArr[0];
         searchItem = dataArr[1];
-        spotifyThis();
+        
+        switch (command) {
+            case "concert-this":
+                concertThis();
+                break;
+            case "spotify-this-song":
+                spotifyThis();
+                break;
+            case "movie-this":
+                movieThis();
+                break;
+        };;
     })
 };
 
