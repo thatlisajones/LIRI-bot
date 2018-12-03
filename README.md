@@ -6,16 +6,16 @@ Walkthrough video: https://www.youtube.com/watch?v=k6PRhw722Ek;
 
 Screenshots:
 
-![concert-this example 1](images/Capture01.png)
+![concert-this example 1](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture01.png)
 
-![concert-this example 2](images/Capture02.png)
+![concert-this example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture02.png)
 
-![movie-this example 1](images/Capture03.png)
+![movie-this example 1](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture03.png)
 
-![movie-this example 2](images/Capture04.png)
+![movie-this example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture04.png)
 
-![spotify-this-song example 1](images/Capture05.png)
+![spotify-this-song example 1](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture05.png)
 
-![spotify-this-song example 2](images/Capture06.png)
+![spotify-this-song example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture06.png)
 
-![do-what-it-says example](images/Capture07.png)
+![do-what-it-says example](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture07.png)
