@@ -8,14 +8,14 @@ Screenshots:
 
 ![concert-this example 1](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture01.PNG);
 
-![concert-this example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture02.png);
+![concert-this example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture02.PNG);
 
-![movie-this example 1](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture03.png);
+![movie-this example 1](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture03.PNG);
 
-![movie-this example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture04.png);
+![movie-this example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture04.PNG);
 
-![spotify-this-song example 1](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture05.png);
+![spotify-this-song example 1](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture05.PNG);
 
-![spotify-this-song example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture06.png);
+![spotify-this-song example 2](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture06.PNG);
 
-![do-what-it-says example](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture07.png);
+![do-what-it-says example](https://github.com/thatlisajones/LIRI-bot/blob/master/images/Capture07.PNG);
